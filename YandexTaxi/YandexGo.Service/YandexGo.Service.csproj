@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\CarDTOs\" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\YandexGo.Data\YandexGo.Data.csproj" />
+    <ProjectReference Include="..\YandexGo.Domain\YandexGo.Domain.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.1" />
+  </ItemGroup>
+
+</Project>

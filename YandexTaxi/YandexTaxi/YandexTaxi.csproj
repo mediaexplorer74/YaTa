@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.10" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YandexGo.Data\YandexGo.Data.csproj" />
+    <ProjectReference Include="..\YandexGo.Domain\YandexGo.Domain.csproj" />
+    <ProjectReference Include="..\YandexGo.Service\YandexGo.Service.csproj" />
+  </ItemGroup>
+</Project>

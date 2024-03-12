@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Package IgnorableNamespaces="uap mp build" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:build="http://schemas.microsoft.com/developer/appx/2015/build">
+  <Identity Name="A025C540.249652AF37C0D" Publisher="CN=664B951F-9687-4D48-9CA2-CD26E58A4C07" Version="2.0.3.0" ProcessorArchitecture="arm" />
+  <mp:PhoneIdentity PhoneProductId="6ae62af0-c939-4b1a-809e-a7a6f2b2011a" PhonePublisherId="8ab6c6e6-237f-4da0-90ac-19d65bd5116b" />
+  <Properties>
+    <DisplayName>Яндекс.Такси</DisplayName>
+    <PublisherDisplayName>Yandex</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10586.0" MaxVersionTested="10.0.10586.0" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00" MinVersion="14.0.24123.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.NET.Native.Framework.1.3" MinVersion="1.3.24201.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.NET.Native.Runtime.1.4" MinVersion="1.4.24201.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="RU-RU" />
+    <Resource uap:Scale="100" />
+    <Resource uap:Scale="200" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="Yandex.Taxi.exe" EntryPoint="Yandex.Taxi.App">
+      <uap:VisualElements DisplayName="Яндекс.Такси" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Приложение Яндекс.Такси" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\Square71x71Logo.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#ffffff" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="LiveTileTask.UpdateTile">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="phoneCall" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.certificates">
+      <Certificates />
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>Yandex.Taxi.dll</Path>
+        <ActivatableClass ActivatableClassId="LiveTileTask.UpdateTile" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>Yandex.MapKit.dll</Path>
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.SpannableStringSpan" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Suggest.HistoryItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.I18nTime" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Glyphs.GlyphIdRange" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.ScreenRect" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.SpannableString" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.BundleVersion" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.MassTransitObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessPhotoObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Chain" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.TimeRange" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessRatingObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.PanoramasObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.SearchMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Feature" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Facet" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Sort" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessFilter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Availability" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.FeatureEnumValue" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.House" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Stop" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Router" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.ToponymResultMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessPhotoObjectMetadataPhoto" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Response" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.FeatureVariantValue" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.SearchOptions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Category" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Panorama" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Advertisement" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.StopStyle" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.RouterObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessListObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessListObjectMetadataBusiness" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessFilterValues" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.PSearchObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.ToponymObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessFilterEnumValue" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.SuggestItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessFilterBooleanValue" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Phone" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.TransitObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.AddressComponent" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.ToponymResultMetadataResponseInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.SearchLink" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.Address" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.BusinessResultMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.WorkingHours" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Search.WebObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.AttributionLink" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.LocationViewSourceFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.ViewArea" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.FixedPhrase" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.GuidancePhrasePart" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.GuidancePhraseRoadEvent" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.Internal.PhraseToText" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.SpeedLimitsRules" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.GuidancePhraseDrivingAction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.SpeedLimits" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.DisplayedAnnotations" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.AnnotationWithDistance" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.ClassifiedLocation" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.Phrase" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.FasterAlternative" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Guidance.GuidancePhrase" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.RoadEvents.TimePeriod" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.RoadEvents.RoadEventMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.RoadEvents.Feed" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.RoadEvents.Entry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.RoadEvents.TextEntry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Photos.Image" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Photos.Entry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Photos.Feed" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.AttributionAuthor" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.JamSegment" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.RequestPoint" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.DrivingSummaries" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.RawSpeedLimit" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.RawAnnotationSchemes" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.RawAnnotationScheme" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.RouteUtils" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.RawLaneSign" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.RawSpeedLimits" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.LaneBitmap" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.RawSectionMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.RawLaneSigns" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Internal.LaneBitmapFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Annotation" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.LaneSign" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Lane" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.UturnMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.RouteMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Section" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.LeaveRoundaboutMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Flags" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Summary" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Weight" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.DrivingOptions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.ActionMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.SectionMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Driving.Event" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Circle" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.BoundingBox" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Subpolyline" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Polyline" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Span" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Polygon" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Direction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Point" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.PolylinePosition" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.PolylineBuilder" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.GeoHelper" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Segment" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Geo.Projections" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Geo.XYPoint" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.SubpolylineHelper" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.Geometry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.BoundingBoxHelper" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Geometry.LinearRing" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Map.IconStyle" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Map.CameraPosition" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Map.VisibleRegion" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Map.VisibleRegionUtils" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.VehicleStop" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.MasstransitRouteSerializer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Transport" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.RouteStopMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.RouteStop" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Transfer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.TransportTransportThread" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.VehicleStopEstimation" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Vehicle" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.LineStyle" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.StopMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.ScheduleEntryEstimation" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.RouteMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Section" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.SectionMetadataSectionData" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.BriefScheduleScheduleEntry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Walk" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.SpotsContainer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Line" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.ThreadAtStop" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Internal.RawConstruction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Internal.RawSectionMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Internal.RawConstructions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Internal.VehicleRawData" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Internal.TrajectorySegmentMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Internal.RawTransfer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Internal.RawWalk" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.LineAtStop" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Stop" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Thread" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Wait" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.ScheduleEntryPeriodical" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.MasstransitTools" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.SectionMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Spot" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.BriefSchedule" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.Weight" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Masstransit.ScheduleEntryScheduled" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.OfflineCache.RegionList" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.OfflineCache.RegionData" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.OfflineCache.RegionFile" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.ResourceUrlProvider.DefaultUrlProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Atom.Author" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Atom.Link" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Atom.Feed" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Atom.Entry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.GeoObject" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Animation" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Money" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Location.ViewArea" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Location.LocationViewSourceFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Location.LocationManagerUtils" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Location.Location" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.GeoObjectCollectionItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.PanoramaControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.ScreenPoint" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Layers.LayerOptions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Layers.LayerParams" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Taxi.RideInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Taxi.RideOption" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Attribution" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Uri.UriObjectMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Uri.Uri" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.GeoObjectCollection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Version" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Reviews.ReviewSpecificEntry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Reviews.Tag" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Reviews.Feed" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Reviews.Entry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.LocalizedValue" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Tiles.RawTile" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Tiles.DefaultUrlProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Traffic.RoadEventTapInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Traffic.TrafficLevel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.MapKitFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.TestStruct" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.MapControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Coverage.Region" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.TileId" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.MapKit.Direct.Banner" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>Yandex.Maps.Recording.dll</Path>
+        <ActivatableClass ActivatableClassId="Yandex.Maps.Recording.RecordingFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Maps.Recording.BundleVersion" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>Yandex.Runtime.dll</Path>
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Image.ImageProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Hosts.RuntimeHosts" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.PlatformView" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Recording.EventLoggingFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Runtime" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.BundleVersion" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.I18n.I18nPrefs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.I18n.I18nManagerFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.TestViewControl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Logging.LogMessage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Logging.LoggingFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Logging.Logger" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Internal.TestSupport.TestStructure" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Internal.TestSupport.FullLiteTestStructure" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Internal.TestSupport.FullTestStructure" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Internal.TestSupport.OptionsTestStructure" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Internal.TestSupport.FullOptionsTestStructure" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Yandex.Runtime.Internal.TestSupport.LiteTestStructure" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+  <build:Metadata>
+    <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
+    <build:Item Name="VisualStudio" Version="14.0" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2015" />
+    <build:Item Name="OperatingSystem" Version="6.3.9600.16384 (winblue_rtm.130821-1623)" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.25425.1" />
+    <build:Item Name="ProjectGUID" Value="{63A65ABF-8501-4163-9208-27BB34F3C019}" />
+    <build:Item Name="ilc.exe" Version="1.4.24208.01 built by: PROJECTNGDR2" />
+    <build:Item Name="OptimizingToolset" Value="ilc.exe" />
+    <build:Item Name="UseDotNetNativeSharedAssemblyFrameworkPackage" Value="True" />
+    <build:Item Name="UniversalGenericsOptOut" Value="false" />
+    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="14.0.25527.1" />
+    <build:Item Name="BehaviorsXamlSDKManaged" Version="12.0" />
+    <build:Item Name="SQLite.UWP.2015" Version="3.13.0" />
+    <build:Item Name="WindowsMobile" Version="10.0.10586.0" />
+    <build:Item Name="MakePri.exe" Version="10.0.14393.33 (rs1_release_sec.160727-1952)" />
+  </build:Metadata>
+</Package>

@@ -23,10 +23,10 @@ Some lite WP8->UWP transformation & mini-research.
 
 ## App Architecture / Progress
 - Yandex.Taxi [UWP; blank/empty app at now, no success to decomp.]
-- Yandex.Maps.Recording_ [.NET 4.5 ? ; decompiled by DotPeeks]
-- Yandex.MapKit_ [.NET 4.5 ? ; decompiled by DotPeeks]
-- Yandex.Runtime_ [.NET 4.5 ?; decompiled by DotPeeks]
-- LiveTileTask_ [.NET 4.5 ? ; decompiled by DotPeeks]
+- Yandex.Maps.Recording [UWP; decompiled by DotPeeks]
+- Yandex.MapKit [UWP; decompiled by DotPeeks]
+- Yandex.Runtime [UWP;  decompiled by DotPeeks]
+- LiveTileTask [UWP;  decompiled by DotPeeks]
 
 ## Reference(s)
 https://taxi.yandex.ru/

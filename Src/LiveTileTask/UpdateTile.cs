@@ -10,23 +10,23 @@ using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Metadata;
 
-#nullable disable
+//#nullable disable
 namespace LiveTileTask
 {
-  [MarshalingBehavior]
-  [Threading]
+  //[MarshalingBehavior]
+  //[Threading]
   [Version(16777216)]
   [CompilerGenerated]
   [Activatable(16777216)]
   public sealed class UpdateTile : IBackgroundTask, IStringable
   {
-    [MethodImpl(MethodCodeType = MethodCodeType.Runtime)]
+    //[MethodImpl(MethodCodeType = MethodCodeType.Runtime)]
     public extern UpdateTile();
 
-    [MethodImpl(MethodCodeType = MethodCodeType.Runtime)]
+    //[MethodImpl(MethodCodeType = MethodCodeType.Runtime)]
     public extern void Run([In] IBackgroundTaskInstance taskInstance);
 
-    [MethodImpl(MethodCodeType = MethodCodeType.Runtime)]
+    //[MethodImpl(MethodCodeType = MethodCodeType.Runtime)]
     extern string IStringable.ToString();
   }
 }
